@@ -12,20 +12,21 @@ int main(){
   int randomguess;
   int guesstracker=0;
   
-  //This loop wil
+  //This loop will decide  whether to end or not using a break command
   while(true){
       cout<< "enter the guess"<<endl;
       cin>>randomguess;
       guesstracker++;
-      
+      //if the guess is correct this code will end the program
       if (randomguess==randomnum){
           cout<<"Guesses: " <<guesstracker<<"\n\nCorrect Guess!"<<endl;
           break;
       }
+        //if this guess is incorrect and above the random number it will be too high
       else if (randomguess >randomnum){
           cout<<"Guesses: "<<guesstracker<<"\n\nThe numbers too high."<<endl;
       } 
-      
+      //if the guess is incorrect  and below the random it will be too low
       else {
           cout<<"Guesses: "<<guesstracker<<"\n\nThe numbers too low"<<endl;
       
