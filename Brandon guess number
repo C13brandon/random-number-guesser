@@ -14,18 +14,30 @@ int main(){
   
   //This loop will decide  whether to end or not using a break command
   while(true){
-      cout<< "enter the guess"<<endl;
+      
+      cout<< "enter your guess (hint:must be an integer from 1-100)"<<endl;
       cin>>randomguess;
       guesstracker++;
+      
+       //This determines whether a guess is an allowed integer or not
+            if (cin.fail()){
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout<<"\nYour guess must be an actual integer from 1-100!"<<endl;
+            }
+
+      
       //if the guess is correct this code will end the program
       if (randomguess==randomnum){
           cout<<"Guesses: " <<guesstracker<<"\n\nCorrect Guess!"<<endl;
           break;
       }
+      
         //if this guess is incorrect and above the random number it will be too high
       else if (randomguess >randomnum){
           cout<<"Guesses: "<<guesstracker<<"\n\nThe numbers too high."<<endl;
       } 
+      
       //if the guess is incorrect  and below the random it will be too low
       else {
           cout<<"Guesses: "<<guesstracker<<"\n\nThe numbers too low"<<endl;
@@ -35,7 +47,3 @@ int main(){
     return 0;
 
 }
-    
-    
-    
-    
